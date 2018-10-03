@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+	<!-- // 这两个简称需要改一下,不过也可能无用 -->
+	
+		<typeAlias alias="Label" type="priv.hailong.pojo.Label" />
+		<typeAlias alias="Category" type="priv.hailong.pojo.CategoryExample" />
+		<typeAlias alias="Product" type="priv.hailong.pojo.Product" />
+	</typeAliases>
+	<environments default="development">
+	    <environment id="development">
+		<transactionManager type="JDBC" />
+			<dataSource type="POOLED">  
+                <property name="driver" value="com.mysql.cj.jdbc.Driver" />
+			    <property name="url" value="jdbc:mysql://localhost:3306/tmall_ssm?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT" />
+			    <property name="username" value="root" />
+			    <property name="password" value="Hailong961129" />
+                       </dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+	     <!-- // power by http://www.yiibai.com -->
+	     <!-- // 这简称需要改一下,不过也可能无用 -->
+	     <mapper resource="priv/hailong/mapper/CategoryMapper.xml" />
+	     <mapper resource="priv/hailong/mapper/ProductMapper.xml" />
+<!--	     <mapper resource="priv/hailong/mapper/*.xml" />
+	     <mapper resource="priv/hailong/mapper/CategoryMapper.xml" />
+	     <mapper resource="priv/hailong/mapper/ProductMapper.xml" />  -->
+	</mappers>
+</configuration>
